@@ -1,0 +1,6 @@
+{
+  "defaultCooldown": 3,
+  "cmdPath": "./commands",
+  "botLogFile": "bot.log",
+  "owner": "264472518872530944"
+}
