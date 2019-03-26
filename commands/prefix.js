@@ -1,4 +1,4 @@
-const {guild} = require('../db');
+const {guilds} = require('../db');
 
 module.exports = {
   name: 'prefix',
@@ -7,8 +7,8 @@ module.exports = {
   cooldown: 3,
   args: true,
   execute: async (msg, args) => {
-    await guild.update({prefix: args[0]}, {
-      where: {guild_id: msg.guild.id}
+    await guilds.update({prefix: args[0]}, {
+      where: {guildId: msg.guild.id}
     });
     msg.channel.send(`your prefix is now: \`${args[0]}\``);
   }

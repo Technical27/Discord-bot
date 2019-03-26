@@ -6,9 +6,9 @@ module.exports = {
   cooldown: 3,
   usage: '<new volume>',
   execute: (msg, args) => {
-    if (isNaN(args[0])) return msg.channel.send('That is an invalid volume');
-    const volume = Math.max(Math.min(args[0], 100), 0);
-    guild.update({volume}, {where: {guild_id: msg.guild.id}});
+    const volume = Math.max(Math.min(Number(args[0]), 100), 0);
+    if (isNaN(volume)) return msg.channel.send('That is an invalid volume');
+    guild.update({volume}, {where: {guildId: msg.guild.id}});
     msg.channel.send(`your volume is now \`${volume}\``);
   }
 };
