@@ -1,5 +1,5 @@
 const ytdl = require('ytdl-core');
-const {guild} = require('../db');
+const {guilds} = require('../db');
 const Discord = require('discord.js');
 const vMap = new Discord.Collection([
   ['mi', 'https://www.youtube.com/watch?v=XAYhNHhxN0A']
@@ -18,9 +18,9 @@ module.exports = {
     if (vconn) vconn.disconnect();
     const vc = msg.member.voiceChannel;
     if (vc) {
-      const {volume} = await guild.findOne({where: {guild_id: msg.guild.id}});
+      const {volume} = await guilds.findOne({where: {guildId: msg.guild.id}});
       const conn = await vc.join();
-      const stream = ytdl(vMap.get(args[0]), {filter: 'audioonly', quality: 'highestaudio'});
+      const stream = ytdl(vMap.get(args[0]), {filter: 'audioonly'});
       const dispatcher = conn.playStream(stream);
       dispatcher.setVolume(volume/100);
       dispatcher.once('end', () => vc.leave());
