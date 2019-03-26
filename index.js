@@ -79,7 +79,7 @@ client.on('message', async msg => {
   }
   catch (e) {
     client.logger.log('error', e);
-    msg.channel.send('something broke while running your command');
+    msg.channel.send(`something broke while running your command, here is the error:\n\`${e}\``);
   }
 });
 
