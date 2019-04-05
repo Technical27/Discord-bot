@@ -25,5 +25,6 @@ module.exports = {
       dispatcher.setVolume(volume/100);
       dispatcher.once('end', () => vc.leave());
     }
+    else msg.channel.send('You are not in any voice channel');
   }
 };
