@@ -17,7 +17,7 @@ item.belongsTo(shop, {foreignKey: 'item_id', as: 'item'});
 
 users.prototype.addItem = async item => {
   const userItem = await item.findOne({
-    where: { user_id: this.user_id, item_id: item.id },
+    where: {user_id: this.user_id, item_id: item.id},
   });
   if (userItem) {
     userItem.amount += 1;
