@@ -4,10 +4,10 @@
     "moment": "^2.24.0",
     "node-fetch": "^2.3.0",
     "node-opus": "^0.3.1",
-    "sequelize": "^4.43.0",
+    "sequelize": "^5.3.1",
     "sodium": "^3.0.2",
     "sqlite3": "^4.0.6",
-    "winston": "^3.2.0",
+    "winston": "^3.2.1",
     "ytdl-core": "^0.29.1"
   },
   "scripts": {
