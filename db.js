@@ -13,7 +13,7 @@ const shop = sequelize.import('dbModels/shop');
 const item = sequelize.import('dbModels/items');
 const guilds = sequelize.import('dbModels/guilds');
 
-item.belongsTo(shop, { foreignKey: 'item_id', as: 'item' });
+item.belongsTo(shop, {foreignKey: 'item_id', as: 'item'});
 
 users.prototype.addItem = async item => {
   const userItem = await item.findOne({
