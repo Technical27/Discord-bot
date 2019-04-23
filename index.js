@@ -97,4 +97,4 @@ for (const f of files) {
   client.commands.set(file.name, file);
 }
 
-client.login(process.env.DISCORD_TOKEN | process.argv[2]);
+client.login(process.env.DISCORD_TOKEN || process.argv[2]);
